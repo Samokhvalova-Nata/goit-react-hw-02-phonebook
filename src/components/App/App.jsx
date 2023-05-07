@@ -13,7 +13,14 @@ export class App extends Component {
   }
 
   formSubmitHandler = (values) => {
-    console.log(values);
+    const { contacts } = this.state
+    const newName = contacts.some(contact =>
+      contact.name.toLowerCase() === values.name.toLowerCase());
+
+    if (newName) {
+      return alert(`${values.name} is already in contacts`);
+    }
+
     this.setState((prev) => {
       return {
         contacts: prev.contacts.concat({ ...values, id: nanoid()})

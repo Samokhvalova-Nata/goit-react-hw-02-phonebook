@@ -9,7 +9,6 @@ export const Form = styled.form`
     min-height: 240px;
     border-radius: 10px;
     border: 1px solid rgba(33, 33, 33, 0.5);
-    // background-color: var(--primary-background-color);
     padding: 40px;
 `
 
@@ -60,10 +59,11 @@ export const Button = styled.button`
         font-weight: 700;
         font-size: 16px;
         text-transform: uppercase;
-        transition: background-color var(--transition);
+        transition: background-color var(--transition), transform var(--transition);
 
         &:hover,
         &:focus {
         background-color: #188CE8;
+        transform: scale(1.01);
     }
 `
